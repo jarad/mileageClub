@@ -9,4 +9,11 @@ Maintainer: Jarad Niemi <jaradniemi@gmail.com>
 Description: Provides functions to read IDs, read cards, plot data, etc.
     Eventually it will also contain previous data (without the IDs).
 License: GPL (>=2)
+Imports:
+    dplyr,
+    magrittr,
+    readr,
+    shiny,
+    stringr,
+    tidyr
 RoxygenNote: 5.0.1
