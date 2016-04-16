@@ -16,7 +16,7 @@ milestones = function(d) {
   d %>% 
     cumulative_miles_by_id %>%
     group_by_("cumulative_miles", "week") %>%
-    summarize_(n = dplyr::n()) %>%
+    summarize_(n = length("week")) %>%
     mutate_(milestone = "cumulative_miles") %>%
     ungroup() %>%
     select_(-"cumulative_miles") %>%
