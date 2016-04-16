@@ -15,10 +15,10 @@
 milestones = function(d) {
   d %>% 
     cumulative_miles_by_id %>%
-    group_by_("cumulative_miles", "week") %>%
-    summarize_(n = length("week")) %>%
-    mutate_(milestone = "cumulative_miles") %>%
+    group_by_(~cumulative_miles, ~week) %>%
+    summarize_(n = ~length(week)) %>%
+    mutate_(milestone = ~cumulative_miles) %>%
     ungroup() %>%
-    select_(-"cumulative_miles") %>%
+    select_(~ -cumulative_miles) %>%
     tidyr::spread_("week", "n", fill=0)
 }

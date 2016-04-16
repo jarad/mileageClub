@@ -14,9 +14,9 @@
 #' }
 cumulative_miles_by_id = function(d, miles_per_card=5) {
   d %>% 
-    group_by_("id") %>%
-    arrange_("id", "week") %>%
+    group_by_(~id) %>%
+    arrange_(~week) %>%
     mutate_(one = 1, 
-            cumulative_miles = miles_per_card*cumsum("one")) %>%
-    select_(-"one")
+            cumulative_miles = ~miles_per_card*cumsum(one)) %>%
+    select_(~ -one)
 }

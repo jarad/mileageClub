@@ -5,7 +5,7 @@
 #' 
 #' @param cards A \code{data.frame} contining all the cards with the weeks that they were completed.
 #' @param ids A \code{data.frame} containing the student
-#' @import shiny
+#' @import shiny dplyr
 #' @export
 #' @examples
 #' \dontrun{
@@ -14,9 +14,10 @@
 summary = function(cards,ids) {
   total_miles = cumulative_miles(cards)
   
-  milestones = milestones(cards) %>%
-    dplyr::mutate_(Total = rowSums(".") - "milestone")
-  
+  milestones = milestones(cards)
+#   %>%
+#     mutate_(Total = ~rowSums(select(-milestone)))
+#   
   shinyApp(
     ui = shinyUI(navbarPage(
       title = 'MGMC Mileage Club - Fellows',
