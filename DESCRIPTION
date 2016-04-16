@@ -11,7 +11,7 @@ Description: Provides functions to read IDs, read cards, plot data, etc.
 License: GPL (>=2)
 Imports:
     dplyr,
-    magrittr,
+    DT,
     readr,
     shiny,
     stringr,

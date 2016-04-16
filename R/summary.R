@@ -15,7 +15,7 @@ summary = function(cards,ids) {
   total_miles = cumulative_miles(cards)
   
   milestones = milestones(cards) %>%
-    mutate(Total = rowSums(.) - milestone)
+    dplyr::mutate_(Total = rowSums(".") - "milestone")
   
   shinyApp(
     ui = shinyUI(navbarPage(
