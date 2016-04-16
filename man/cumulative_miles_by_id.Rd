@@ -8,6 +8,8 @@ cumulative_miles_by_id(d, miles_per_card = 5)
 }
 \arguments{
 \item{d}{A \code{data.frame} containing all the card and day information.}
+
+\item{miles_per_card}{An integer specifying how many miles a card is worth.}
 }
 \value{
 A \code{data.frame} with the cumulative miles for each individual by week.
@@ -15,5 +17,10 @@ A \code{data.frame} with the cumulative miles for each individual by week.
 \description{
 For each individual, calculate the miles run that week and the 
 cumulative miles run up to and including that week.
+}
+\examples{
+\dontrun{
+read_cards() \%>\% cumulative_miles_by_id
+}
 }
 

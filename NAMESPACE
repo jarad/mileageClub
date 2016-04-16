@@ -2,5 +2,8 @@
 
 export(cumulative_miles)
 export(cumulative_miles_by_id)
+export(milestones)
 export(read_cards)
 export(summary)
+import(dplyr)
+import(magrittr)

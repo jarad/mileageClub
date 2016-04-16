@@ -18,4 +18,9 @@ the cumulative miles per week.
 \description{
 Calculates the cumulative miles by week.
 }
+\examples{
+\dontrun{
+read_cards() \%>\% cumulative_miles
+}
+}
 

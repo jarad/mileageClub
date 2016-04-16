@@ -1,10 +1,5 @@
 library(shiny)
-
-cards_per_mile = 5
-
-source("read_cards.R")
-source("cumulative_miles.R")
-source("milestones.R")
+library(mileageClub)
 
 cards = read_cards()
 
