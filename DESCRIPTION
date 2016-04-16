@@ -1,0 +1,12 @@
+Package: mileageClub
+Type: Package
+Title: Provides functions and data for the Mary Greeley Medical Center Mileage
+    Club
+Version: 0.1
+Date: 2016-04-16
+Author: Jarad Niemi <jaradniemi@gmail.com>
+Maintainer: Jarad Niemi <jaradniemi@gmail.com>
+Description: Provides functions to read IDs, read cards, plot data, etc.
+    Eventually it will also contain previous data (without the IDs).
+License: GPL (>=2)
+RoxygenNote: 5.0.1
