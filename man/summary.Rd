@@ -4,20 +4,24 @@
 \alias{summary}
 \title{Get mileage club summary}
 \usage{
-summary(cards, school = "Fellows")
+summary(cards, ids, school = "Fellows")
 }
 \arguments{
 \item{cards}{A \code{data.frame} containing all the cards with the weeks that they were completed.}
 
+\item{ids}{A \code{data.frame} containing the student}
+
 \item{school}{A string containing the name of the school}
 }
 \description{
-Get the mileage club summary as a shiny app which reports the miles run each week,
-the cumulative miles run, and some other information.
+Get the mileage club summary as a shiny app which reports the cumulative miles, milestones, and students
+reaching milestones.
 }
 \examples{
 \dontrun{
-summary()
+cards = read_cards()
+ids = read_csv('data/id.csv')
+summary(cards,ids)
 }
 }
 

@@ -17,8 +17,6 @@ milestones = function(d) {
     cumulative_miles_by_id %>%
     group_by_(~cumulative_miles, ~week) %>%
     summarize_(n = ~length(week)) %>%
-    mutate_(milestone = ~cumulative_miles) %>%
-    ungroup() %>%
-    select_(~ -cumulative_miles) %>%
-    tidyr::spread_("week", "n", fill=0)
+    mutate_(milestone = ~cumulative_miles) %>% 
+    select_(~ -cumulative_miles)
 }
