@@ -3,15 +3,15 @@
 #' Get the mileage club summary as a shiny app which reports the miles run each week,
 #' the cumulative miles run, and some other information.
 #' 
-#' @param cards A \code{data.frame} contining all the cards with the weeks that they were completed.
-#' @param ids A \code{data.frame} containing the student
-#' @import shiny dplyr
+#' @param cards A \code{data.frame} containing all the cards with the weeks that they were completed.
+#' @param school A string containing the name of the school
+#' @import shiny dplyr DT
 #' @export
 #' @examples
 #' \dontrun{
 #' summary()
 #' }
-summary = function(cards,ids) {
+summary = function(cards,school) {
   total_miles = cumulative_miles(cards)
   
   milestones = milestones(cards)
@@ -20,23 +20,17 @@ summary = function(cards,ids) {
 #   
   shinyApp(
     ui = shinyUI(navbarPage(
-      title = 'MGMC Mileage Club - Fellows',
-      tabPanel('Find student',     DT::dataTableOutput('ex1')),
-      tabPanel('Total Miles',      DT::dataTableOutput('total_miles')),
-      tabPanel('Milestones',       DT::dataTableOutput('milestones'))
+      title = paste('MGMC Mileage Club -',school),
+      tabPanel('Total Miles',      dataTableOutput('total_miles')),
+      tabPanel('Milestones',       dataTableOutput('milestones'))
     )),
     server = function(input, output) {
-      
-      output$ex1 = DT::renderDataTable(
-        DT::datatable(ids, options = list(pageLength = 25))
+      output$total_miles = renderDataTable(
+        datatable(total_miles)
       )
       
-      output$total_miles = DT::renderDataTable(
-        DT::datatable(total_miles)
-      )
-      
-      output$milestones = DT::renderDataTable(
-        DT::datatable(milestones)
+      output$milestones = renderDataTable(
+        datatable(milestones)
       )
     }
   )
