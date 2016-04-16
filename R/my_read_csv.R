@@ -10,7 +10,7 @@
 #' my_read_csv('20160416.csv')
 #' }
 my_read_csv = function(f) {
-  d = read_csv(f)
-  d$date = as.Date(str_extract(f, '[0-9]{8}'), format="%Y%m%d")
+  d = readr::read_csv(f)
+  d$date = as.Date(stringr::str_extract(f, '[0-9]{8}'), format="%Y%m%d")
   return(d)
 }

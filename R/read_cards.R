@@ -6,13 +6,14 @@
 #' @param cards_path A directory contain the card files.
 #' @param days_file A directory contain the day information.
 #' @return A \code{data.frame} of all cards merged with day information.
+#' @import dplyr
 #' @export
 #' @examples 
 #' \dontrun{
 #' read_cards()
 #' }
 read_cards = function(cards_path='data/cards/', days_file='data/days.csv') {
-  days = read_csv(days_file) %>%
+  days = readr::read_csv(days_file) %>%
     mutate(date = as.Date(date, format='%m/%d/%Y'))
   
   list.files(path = cards_path, full.names = TRUE) %>% 
