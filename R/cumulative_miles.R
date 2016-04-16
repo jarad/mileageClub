@@ -15,7 +15,7 @@
 cumulative_miles = function(d, miles_per_card=5) {
   d %>%
     group_by_("week") %>%
-    summarize_(miles = miles_per_card*n()) %>%
+    summarize_(miles = miles_per_card*dplyr::n()) %>%
     arrange_("week") %>%
     mutate_(cumulative_miles = cumsum("miles"))
 }
