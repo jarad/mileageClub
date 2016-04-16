@@ -2,6 +2,7 @@
 
 export(cumulative_miles)
 export(cumulative_miles_by_id)
+export(find_name)
 export(milestones)
 export(read_cards)
 export(summary)

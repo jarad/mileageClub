@@ -4,12 +4,12 @@
 \alias{summary}
 \title{Get mileage club summary}
 \usage{
-summary(cards, ids)
+summary(cards, school = "Fellows")
 }
 \arguments{
-\item{cards}{A \code{data.frame} contining all the cards with the weeks that they were completed.}
+\item{cards}{A \code{data.frame} containing all the cards with the weeks that they were completed.}
 
-\item{ids}{A \code{data.frame} containing the student}
+\item{school}{A string containing the name of the school}
 }
 \description{
 Get the mileage club summary as a shiny app which reports the miles run each week,
